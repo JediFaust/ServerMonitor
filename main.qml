@@ -15,10 +15,7 @@ Window {
         const xhr = new XMLHttpRequest()
 
         xhr.onreadystatechange = function() {
-            console.log("On ready change got")
-            console.log(xhr.responseText)
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                console.log("Request done!")
                 let response = JSON.parse(xhr.responseText)
                 callBack(response)
             }
@@ -30,7 +27,6 @@ Window {
 
     function requestStatus() {
         function callback(response) {
-            console.log("Got a response")
             results.clear()
             for(let i = 0; i < response.length; i++) {
                 let newItem = {}

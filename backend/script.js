@@ -51,9 +51,8 @@ let transporter = mailer.createTransport({
 
     setTimeout(delayedCheck, interval)
 
-async function saveStatus(serv) {
+function saveStatus(serv) {
     serv.status = 1
-    console.log("Saving the model: ", serv);
     serv.save()
 }
 
